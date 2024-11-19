@@ -1,0 +1,122 @@
+/* src/App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+  flex: 0;
+  background-color: #282c34;
+  padding: 1rem 2rem;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.sidebar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 0 1rem;
+  background-color: #3b4049;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #505560;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  overflow: auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid #ddd; /* Added border */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid #ddd; /* Added border */
+}
+
+table th, table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd; /* Added border */
+}
+
+table th {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #ddd; /* Added border */
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.inner-table th, .inner-table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 0.875rem;
+}
+
+.inner-table th {
+  background-color: #e0e0e0;
+}
+
+.inner-table tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #444;
+  margin-bottom: 0.5rem;
+}
