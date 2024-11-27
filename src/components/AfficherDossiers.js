@@ -13,10 +13,13 @@ const AfficherDossiers = () => {
 
     const fetchDossiers = () => {
         axios.get('http://localhost:8080/api/dossiers')
-            .then(response => setDossiers(response.data))
+            .then(response => {
+                setDossiers(response.data);
+                toast.success('Dossiers chargés avec succès.');
+            })
             .catch(error => {
                 console.error('Erreur lors du chargement des dossiers', error);
-                toast.error('Erreur lors du chargement des dossiers');
+                toast.error('Erreur lors du chargement des dossiers.');
             });
     };
 
@@ -25,16 +28,16 @@ const AfficherDossiers = () => {
             const response = await axios.delete('http://localhost:8080/api/deleteAll');
             if (response.status === 200) {
                 toast.success(response.data); // Affiche le message de succès du backend
+                fetchDossiers(); // Rafraîchit la liste des dossiers après la suppression
             } else {
                 toast.error('Une erreur s\'est produite lors de la suppression des dossiers.');
             }
-            fetchDossiers(); // Rafraîchit la liste des dossiers après la suppression
         } catch (error) {
             console.error('Erreur lors de la suppression des dossiers', error);
             if (error.response && error.response.data) {
                 toast.error(error.response.data); // Affiche le message d'erreur du backend
             } else {
-                toast.error('Une erreur s\'est produite lors de la suppression des dossiers');
+                toast.error('Une erreur s\'est produite lors de la suppression des dossiers.');
             }
         }
     };
